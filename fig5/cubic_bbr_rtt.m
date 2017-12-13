@@ -18,3 +18,4 @@ xlim([0,8])
 xlabel('time (sec)')
 ylabel('RTT (msec)')
 title(' Latency Comparison between CUBIC & BBR')
+print -dpdf 'RTT'

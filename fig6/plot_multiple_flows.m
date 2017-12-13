@@ -16,3 +16,7 @@ xlim([0 length(z)+10])
 ylim([0 100])
 plot([1 length(z)],[bw/num_flows bw/num_flows])
 text(53,20,'fair share')
+xlabel('time (sec)')
+ylabel('Throughput (Mbps)')
+title(' Throughputs of 5 flows sharing a bottleneck')
+print -dpdf fair
