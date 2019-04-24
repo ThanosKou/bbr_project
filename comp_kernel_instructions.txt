@@ -1,0 +1,22 @@
+### Instructions on how to compile new kernel on a linux-based machine.
+
+## First install some prerequisites
+sudo apt update
+sudo apt -y install libelf-dev libssl-dev libncurses-dev flex bison pkg-config gcc
+
+## Download kernel 5.1-rc6
+wget https://github.com/torvalds/linux/archive/v5.1-rc6.tar.gz
+tar -xf v5.1-rc6.tar.gz
+
+cd linux-5.1-rc6
+
+## Compile, Build: 
+
+sudo make menuconfig # select options
+sudo make -j $(nproc)
+sudo make modules_install -j $(nproc)
+sudo make install -j $(nproc)
+
+## Reboot and then check that new version is installed:
+
+uname -r 
